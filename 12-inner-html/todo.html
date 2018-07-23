@@ -1,0 +1,45 @@
+<!-- external script -->
+<!-- internal script -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TODO list</title>
+</head>
+<body>
+  <ul id="todo-list">
+    <!-- <li>Take shower</li>
+    <li>Have a walk</li>
+    <li>Go to bed</li> -->
+  </ul>
+
+  <script type="text/javascript">
+    var todoList = [
+      'Take shower',
+      'Have a walk',
+      'Go to bed'
+    ];
+
+    var htmlList = document.getElementById('todo-list');
+    var content = todoList.map(function(item) {
+      return '<li>' + item + '</li>';
+    });
+
+    htmlList.innerHTML = content.join('');
+    // CLI -> command line interface -> web interface
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
