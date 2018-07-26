@@ -1,0 +1,55 @@
+<!-- $0.addEventListener (Observer design pattern) -->
+<!-- Design patterns, Observer design pattern -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TODO list</title>
+</head>
+<body>
+  <input id="new-item" type="text" />
+  <button id="add-btn">Add</button>
+  <ul id="todo-list">
+    <!-- <li>Take shower</li>
+    <li>Have a walk</li>
+    <li>Go to bed</li> -->
+  </ul>
+
+  <script type="text/javascript">
+    var todoList = [
+      'Take shower',
+      'Have a walk',
+      'Go to bed'
+    ];
+
+    var addBtn = document.getElementById('add-btn');
+    // addBtn.onclick = addItem;
+    addBtn.addEventListener('click', addItem);
+    addBtn.addEventListener('click', function() {
+      console.log('Add button is clicked');
+    }); // anonymous function
+
+    function addItem() {
+      // get value of the input
+      var input = document.getElementById('new-item');
+      var newItem = input.value;
+      // add to todoList array
+      todoList.push(newItem);
+      // re-render
+      render();
+      // clear input
+      input.value = '';
+    }
+
+    function render() {
+      var htmlList = document.getElementById('todo-list');
+      var content = todoList.map(function(item) {
+        return '<li>' + item + '</li>';
+      });
+
+      htmlList.innerHTML = content.join('');
+    }
+
+    render();
+  </script>
+</body>
+</html>

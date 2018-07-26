@@ -1,0 +1,60 @@
+<!-- sessionStorage -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TODO list</title>
+</head>
+<body>
+  <input id="new-item" type="text" />
+  <button id="add-btn">Add</button>
+  <ul id="todo-list">
+  </ul>
+
+  <script type="text/javascript">
+    var storageKey = 'todoList';
+    var dataString = localStorage.getItem(storageKey);
+
+    var todoList;
+
+    if (dataString) {
+      todoList = JSON.parse(dataString);
+    } else {
+      todoList = [];
+    }
+
+    var addBtn = document.getElementById('add-btn');
+    var input = document.getElementById('new-item');
+    addBtn.addEventListener('click', addItem);
+    input.value = sessionStorage.getItem('draft');
+    input.addEventListener('change', updateSessionStorage);
+
+    function updateSessionStorage() {
+      sessionStorage.setItem('draft', input.value);
+    }
+
+    function addItem() {
+      // get value of the input
+      var newItem = input.value;
+      // add to todoList array
+      todoList.push(newItem);
+      // re-render
+      render();
+      // clear input
+      input.value = '';
+      // store data
+      localStorage.setItem(storageKey, JSON.stringify(todoList));
+    }
+
+    function render() {
+      var htmlList = document.getElementById('todo-list');
+      var content = todoList.map(function(item) {
+        return '<li>' + item + '</li>';
+      });
+
+      htmlList.innerHTML = content.join('');
+    }
+
+    render();
+  </script>
+</body>
+</html>
