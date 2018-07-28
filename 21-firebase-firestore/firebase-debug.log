@@ -1,0 +1,32 @@
+[debug] [2018-07-28T04:02:55.249Z] ----------------------------------------------------------------------
+[debug] [2018-07-28T04:02:55.270Z] Command:       /Users/thinhpham/.nvm/versions/node/v8.11.3/bin/node /Users/thinhpham/.nvm/versions/node/v8.11.3/bin/firebase serve
+[debug] [2018-07-28T04:02:55.277Z] CLI Version:   4.0.0
+[debug] [2018-07-28T04:02:55.277Z] Platform:      darwin
+[debug] [2018-07-28T04:02:55.277Z] Node Version:  v8.11.3
+[debug] [2018-07-28T04:02:55.280Z] Time:          Sat Jul 28 2018 13:02:55 GMT+0900 (JST)
+[debug] [2018-07-28T04:02:55.280Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-28T04:02:55.335Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-28T04:02:55.335Z] > authorizing via signed-in user
+[debug] [2018-07-28T04:02:55.341Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/coders-tokyo-firestore-demo  
+  
+ Sat Jul 28 2018 13:02:55 GMT+0900 (JST)
+[debug] [2018-07-28T04:02:56.092Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-28T04:02:56.093Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/coders-tokyo-firestore-demo/tokens  
+  
+ Sat Jul 28 2018 13:02:56 GMT+0900 (JST)
+[debug] [2018-07-28T04:02:56.762Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-28T04:02:56.763Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/coders-tokyo-firestore-demo  
+  
+ Sat Jul 28 2018 13:02:56 GMT+0900 (JST)
+[debug] [2018-07-28T04:02:57.715Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/thinhpham/Dev/example-html/21-firebase-firestore'...
+[info] 
+[debug] [2018-07-28T04:02:57.716Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/676458644162/clients/_:getWebAppConfig  
+  
+ Sat Jul 28 2018 13:02:57 GMT+0900 (JST)
+[debug] [2018-07-28T04:02:58.475Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
