@@ -1,3 +1,4 @@
+<!-- XSS - Cross-site scripting -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -44,8 +45,11 @@
       document.addEventListener('DOMContentLoaded', function() {
         var db = firebase.firestore();
 
+        var todoList = [];
+
         db.collection('todos').get().then(function(snap) {
-          render(snap.docs);
+          todoList = snap.docs;
+          render();
         });
 
         var addBtn = document.getElementById('add-btn');
@@ -55,20 +59,22 @@
         function addItem() {
           // get value of the input
           var input = document.getElementById('new-item');
-          var newItem = input.value;
           // add to todoList array
-          todoList.push(newItem);
-          // re-render
-          render();
-          // clear input
-          input.value = '';
-          // store data
-          localStorage.setItem(storageKey, JSON.stringify(todoList));
+          var newItem = { content: input.value };
+          db.collection('todos').add(newItem)
+            .then(function(docRef) { // document reference
+              return docRef.get();
+            })
+            .then(function(snap) {
+              todoList.push(snap);
+              render();
+              input.value = '';
+            });
         }
 
-        function render(items) {
+        function render() {
           var htmlList = document.getElementById('todo-list');
-          var content = items.map(function(item) {
+          var content = todoList.map(function(item) {
             var data = item.data(); // { content: '' }
             return '<li>' + data.content + '</li>';
           });
